@@ -1,4 +1,3 @@
-// components/shared/Navbar.js
 "use client";
 import Link from "next/link";
 import { useSession, signOut } from "next-auth/react";
@@ -12,9 +11,6 @@ export default function Navbar() {
         <Link href="/" className="font-bold text-xl">
           My App
         </Link>
-      </div>
-
-      <div className="flex items-center space-x-4">
         <Link href="/products" className="hover:underline">
           Products
         </Link>
@@ -23,6 +19,8 @@ export default function Navbar() {
             Add Product
           </Link>
         )}
+      </div>
+      <div>
         {session ? (
           <div className="flex items-center space-x-4">
             <p className="hidden md:block">Hi, {session.user.name}</p>
