@@ -1,5 +1,6 @@
 import NextAuth from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
+
 export const authOptions = {
   providers: [
     GoogleProvider({
@@ -10,6 +11,8 @@ export const authOptions = {
   pages: {
     signIn: "/login",
   },
+  // Just use the env as-is
+  url: process.env.NEXTAUTH_URL,
 };
 
 const handler = NextAuth(authOptions);
